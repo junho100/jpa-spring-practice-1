@@ -1,9 +1,9 @@
 spring:
   datasource:
-    url: jdbc:h2:tcp://localhost/~/jpashop
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:test}?autoReconnect=true&setTimezone=Asia/Seoul
+    username: ${DB_USERNAME:test} # username
+    password: ${DB_PASSWORD:example} # password
+    driver-class-name: com.mysql.cj.jdbc.Driver # mysql 8버전
   jpa:
     hibernate:
       ddl-auto: create
